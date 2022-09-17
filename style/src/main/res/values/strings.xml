@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Storygram</string>
+    <string name="message_error_no_internet">Something is wrong with internet connection\nMake sure you have an Internet Connection and try again.</string>
+    <string name="message_error_unknown">Something is wrong when fetch data\nPlease try again</string>
+
+    <string name="text_choose_image_title">Choose an image</string>
+    <string name="text_choose_image_camera">Camera</string>
+    <string name="text_choose_image_gallery">Gallery</string>
+
+    <string name="error_field_password">Password is required</string>
+    <string name="error_field_email">Email is required</string>
+    <string name="error_field_email_not_valid">Enter a valid email</string>
+    <string name="error_field_password_length_below_min">Password minimum 6 characters</string>
+</resources>

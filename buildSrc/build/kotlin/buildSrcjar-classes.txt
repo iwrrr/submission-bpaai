@@ -1,0 +1,1 @@
+D:\dev\android\bootcamp\dicoding\android-intermediate\Storygram\buildSrc\build\classes\kotlin\main\AndroidProjectConfig.class;D:\dev\android\bootcamp\dicoding\android-intermediate\Storygram\buildSrc\build\classes\kotlin\main\Libraries$Versions.class;D:\dev\android\bootcamp\dicoding\android-intermediate\Storygram\buildSrc\build\classes\kotlin\main\Libraries.class

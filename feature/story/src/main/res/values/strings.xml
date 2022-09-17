@@ -1,0 +1,19 @@
+<resources>
+    <string name="title_new_post">New Post</string>
+    <string name="title_logout">Are you sure you want to logout?</string>
+
+    <string name="error_field_description">Description is required</string>
+
+    <string name="hint_description">Write a description…</string>
+
+    <string name="text_logout_yes">Logout</string>
+    <string name="text_logout_cancel">Cancel</string>
+
+    <string name="empty_story">Story is empty</string>
+    <string name="image_required">Select the image first</string>
+
+    <string name="story_success">Successfully added story</string>
+    <string name="story_failed">Failed to add story</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

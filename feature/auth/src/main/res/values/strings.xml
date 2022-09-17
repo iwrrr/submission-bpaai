@@ -1,0 +1,21 @@
+<resources>
+    <string name="error_field_password">Password is required</string>
+    <string name="error_field_email">Email is required</string>
+    <string name="error_field_email_not_valid">Enter a valid email</string>
+    <string name="error_field_password_length_below_min">Password minimum 6 characters</string>
+
+    <string name="text_button_register_new_account">Register</string>
+    <string name="text_button_login">Login</string>
+    <string name="text_button_register">Register</string>
+
+    <string name="text_not_have_an_account">Don\'t have an account yet?</string>
+    <string name="text_have_an_account">Already have an account?</string>
+
+    <string name="error_field_empty">Field must be filled</string>
+    <string name="error_field_name_not_allowed_character">Name cannot contain special characters</string>
+    <string name="error_field_name_length_below_min">Name at least 6 characters</string>
+
+    <string name="hint_field_name">Name</string>
+    <string name="hint_field_password">Password</string>
+    <string name="hint_field_email">Email</string>
+</resources>

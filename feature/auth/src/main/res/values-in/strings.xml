@@ -1,0 +1,21 @@
+<resources>
+    <string name="error_field_password">Password harus diisi</string>
+    <string name="error_field_email">Email harus diisi</string>
+    <string name="error_field_email_not_valid">Masukkan email yang valid</string>
+    <string name="error_field_password_length_below_min">Password minimal 6 karakter</string>
+
+    <string name="text_button_register_new_account">Daftar</string>
+    <string name="text_button_login">Login</string>
+    <string name="text_button_register">Register</string>
+
+    <string name="text_not_have_an_account">Belum punya akun?</string>
+    <string name="text_have_an_account">Sudah punya akun?</string>
+
+    <string name="error_field_empty">Field harus diisi</string>
+    <string name="error_field_name_not_allowed_character">Nama tidak boleh mengandung karakter spesial</string>
+    <string name="error_field_name_length_below_min">Nama minimal 6 karakter</string>
+
+    <string name="hint_field_name">Nama</string>
+    <string name="hint_field_password">Password</string>
+    <string name="hint_field_email">Email</string>
+</resources>

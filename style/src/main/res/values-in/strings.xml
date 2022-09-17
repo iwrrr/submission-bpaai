@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Storygram</string>
+    <string name="message_error_no_internet">Ada yang salah dengan koneksi internet\nPastikan Anda memiliki Koneksi Internet dan coba lagi</string>
+    <string name="message_error_unknown">Ada yang salah saat mengambil data\nSilakan coba lagi</string>
+
+    <string name="text_choose_image_title">Pilih gambar</string>
+    <string name="text_choose_image_camera">Kamera</string>
+    <string name="text_choose_image_gallery">Galeri</string>
+
+    <string name="error_field_password">Kata sandi harus diisi</string>
+    <string name="error_field_email">Email harus diisi</string>
+    <string name="error_field_email_not_valid">Masukkan email yang valid</string>
+    <string name="error_field_password_length_below_min">Password minimal 6 karakter</string>
+</resources>

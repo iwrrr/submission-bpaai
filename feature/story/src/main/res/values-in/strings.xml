@@ -1,0 +1,17 @@
+<resources>
+    <string name="title_new_post">Postingan Baru</string>
+    <string name="title_logout">Yakin ingin keluar?</string>
+
+    <string name="error_field_description">Deskripsi tidak boleh kosong</string>
+
+    <string name="hint_description">Tulis keterangan…</string>
+
+    <string name="text_logout_yes">Keluar</string>
+    <string name="text_logout_cancel">Batal</string>
+
+    <string name="empty_story">Story tidak ditemukan</string>
+    <string name="image_required">Pilih gambar terlebih dahulu</string>
+
+    <string name="story_success">Berhasil menambahkan cerita</string>
+    <string name="story_failed">Gagal menambahkan cerita</string>
+</resources>
