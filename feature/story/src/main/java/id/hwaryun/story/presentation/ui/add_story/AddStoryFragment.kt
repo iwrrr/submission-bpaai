@@ -1,10 +1,14 @@
 package id.hwaryun.story.presentation.ui.add_story
 
+import android.annotation.SuppressLint
 import android.graphics.Bitmap
 import android.net.Uri
+import android.os.Bundle
 import android.widget.Toast
 import androidx.core.view.isVisible
+import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
+import com.google.android.gms.maps.model.LatLng
 import dagger.hilt.android.AndroidEntryPoint
 import id.hwaryun.core.base.BaseFragment
 import id.hwaryun.core.exception.FieldErrorException
@@ -14,6 +18,7 @@ import id.hwaryun.story.constants.PostFieldConstants
 import id.hwaryun.story.databinding.FragmentAddStoryBinding
 import id.hwaryun.story.presentation.bottomsheet.ImageBottomSheet
 import id.hwaryun.story.presentation.ui.StoryViewModel
+import id.hwaryun.story.presentation.ui.map_story.MapsFragment
 import id.hwaryun.story.utils.Extensions.clear
 import id.hwaryun.story.utils.Extensions.loadImage
 import id.hwaryun.story.utils.checkPermissions
@@ -26,8 +31,16 @@ class AddStoryFragment :
     override val viewModel: StoryViewModel by viewModels()
 
     private var getFile: File? = null
+    private var latLng: LatLng? = null
 
+    @SuppressLint("SetTextI18n")
     override fun initView() {
+        setFragmentResultListener(MapsFragment.KEY_RESULT) { _, bundle ->
+            val location = bundle.getParcelable<LatLng>(MapsFragment.KEY_LAT_LONG) as LatLng
+            binding.tvLocation.text = "Lat: ${location.latitude} Long: ${location.longitude}"
+            latLng = location
+        }
+
         binding.btnBack.setOnClickListener {
             parentFragmentManager.popBackStack()
         }
@@ -46,7 +59,12 @@ class AddStoryFragment :
             }
 
             val photo = getFile as File
-            viewModel.postStory(description, photo)
+            viewModel.postStory(
+                description,
+                photo,
+                latLng?.latitude ?: 0.0,
+                latLng?.longitude ?: 0.0
+            )
         }
 
         binding.ivPhoto.setOnClickListener {
@@ -55,6 +73,19 @@ class AddStoryFragment :
                 requireContext(),
                 ::initBottomSheet
             )
+        }
+
+        binding.tvAddLocation.setOnClickListener {
+            val mapsFragment = MapsFragment()
+            val bundle = Bundle()
+            bundle.putInt("action", MapsFragment.ACTION_PICK_LOCATION)
+
+            mapsFragment.arguments = bundle
+            parentFragmentManager.beginTransaction().apply {
+                add(R.id.fragment_container, mapsFragment)
+                addToBackStack(null)
+                commit()
+            }
         }
     }
 

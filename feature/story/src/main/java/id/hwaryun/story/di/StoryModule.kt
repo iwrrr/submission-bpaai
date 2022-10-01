@@ -1,14 +1,12 @@
 package id.hwaryun.story.di
 
-import android.content.Context
+import android.app.Application
 import androidx.room.Room
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import id.hwaryun.story.data.database.StoryDatabase
-import id.hwaryun.story.data.database.StoryRemoteMediator
 import id.hwaryun.story.data.network.datasource.StoryDataSource
 import id.hwaryun.story.data.network.datasource.StoryDataSourceImpl
 import id.hwaryun.story.data.network.service.StoryService
@@ -16,6 +14,7 @@ import id.hwaryun.story.data.repository.StoryRepository
 import id.hwaryun.story.data.repository.StoryRepositoryImpl
 import id.hwaryun.story.domain.CheckPostFieldUseCase
 import id.hwaryun.story.domain.GetStoriesUseCase
+import id.hwaryun.story.domain.GetStoriesWithLocationUseCase
 import id.hwaryun.story.domain.PostStoryUseCase
 import kotlinx.coroutines.Dispatchers
 import retrofit2.Retrofit
@@ -33,19 +32,8 @@ object StoryModule {
 
     @Provides
     @Singleton
-    fun provideStoryDatabase(@ApplicationContext context: Context): StoryDatabase {
-        return Room.databaseBuilder(context, StoryDatabase::class.java, "story.db")
-            .fallbackToDestructiveMigration()
-            .build()
-    }
-
-    @Provides
-    @Singleton
-    fun provideStoryRemoteMediator(
-        database: StoryDatabase,
-        api: StoryService
-    ): StoryRemoteMediator {
-        return StoryRemoteMediator(database, api)
+    fun provideStoryDatabase(app: Application): StoryDatabase {
+        return Room.databaseBuilder(app, StoryDatabase::class.java, "story.db").build()
     }
 
     @Provides
@@ -56,14 +44,29 @@ object StoryModule {
 
     @Provides
     @Singleton
-    fun provideStoryRepository(dataSource: StoryDataSource): StoryRepository {
-        return StoryRepositoryImpl(dataSource)
+    fun provideStoryRepository(
+        dataSource: StoryDataSource,
+        api: StoryService,
+        database: StoryDatabase
+    ): StoryRepository {
+        return StoryRepositoryImpl(dataSource, api, database)
     }
 
     @Provides
     @Singleton
     fun provideCheckPostFieldUseCase(): CheckPostFieldUseCase {
         return CheckPostFieldUseCase(Dispatchers.IO)
+    }
+
+    @Provides
+    @Singleton
+    fun provideGetStoriesWithLocationUseCase(
+        repository: StoryRepository
+    ): GetStoriesWithLocationUseCase {
+        return GetStoriesWithLocationUseCase(
+            repository,
+            Dispatchers.IO
+        )
     }
 
     @Provides

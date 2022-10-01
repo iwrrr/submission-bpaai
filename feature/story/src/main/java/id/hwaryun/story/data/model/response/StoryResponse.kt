@@ -17,7 +17,7 @@ data class StoryResponse(
     val createdAt: String?,
     @SerializedName("lat")
     val lat: Double?,
-    @SerializedName("long")
+    @SerializedName("lon")
     val long: Double?,
 ) {
 

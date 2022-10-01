@@ -75,11 +75,6 @@ dependencies {
     api(Libraries.retrofit2)
     api(Libraries.httpLogging)
 
-    api(Libraries.room)
-    kapt(Libraries.roomCompiler)
-    api(Libraries.paging)
-    api(Libraries.roomPaging)
-
     api(Libraries.coroutineCore)
     api(Libraries.coroutineAndroid)
 

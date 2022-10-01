@@ -1,6 +1,6 @@
 package id.hwaryun.shared.domain
 
-import com.catnip.core.base.BaseUseCase
+import id.hwaryun.core.base.BaseUseCase
 import id.hwaryun.core.wrapper.ViewResource
 import id.hwaryun.shared.data.repository.UserPreferenceRepository
 import id.hwaryun.shared.utils.suspendSubscribe

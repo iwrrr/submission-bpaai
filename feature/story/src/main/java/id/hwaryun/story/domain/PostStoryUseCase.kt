@@ -1,6 +1,6 @@
 package id.hwaryun.story.domain
 
-import com.catnip.core.base.BaseUseCase
+import id.hwaryun.core.base.BaseUseCase
 import id.hwaryun.core.wrapper.ViewResource
 import id.hwaryun.shared.utils.suspendSubscribe
 import id.hwaryun.story.data.repository.StoryRepository
@@ -30,6 +30,8 @@ class PostStoryUseCase @Inject constructor(
                         .setType(MultipartBody.FORM)
                         .addFormDataPart("description", param.description)
                         .addFormDataPart("photo", param.photo.name, requestImageFile)
+                        .addFormDataPart("lon", param.long)
+                        .addFormDataPart("lat", param.lat)
                         .build()
 
                     repository.addNewStory(requestBody).collect { postResult ->
@@ -52,6 +54,8 @@ class PostStoryUseCase @Inject constructor(
 
     data class Param(
         val description: String,
-        val photo: File
+        val photo: File,
+        val lat: String,
+        val long: String
     )
 }

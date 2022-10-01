@@ -2,19 +2,17 @@ package id.hwaryun.story.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import id.hwaryun.shared.utils.StringUtils
 import id.hwaryun.story.data.model.viewparam.StoryViewParam
 import id.hwaryun.story.databinding.ItemStoriesBinding
 import id.hwaryun.story.utils.Extensions.loadImage
-import id.hwaryun.story.utils.StoryDiffUtil
 
 class StoryAdapter(
     private val onClick: (StoryViewParam) -> Unit
-) : RecyclerView.Adapter<StoryAdapter.StoryViewHolder>() {
-
-    private var oldList = arrayListOf<StoryViewParam>()
+) : PagingDataAdapter<StoryViewParam, StoryAdapter.StoryViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoryViewHolder {
         val binding = ItemStoriesBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -22,17 +20,10 @@ class StoryAdapter(
     }
 
     override fun onBindViewHolder(holder: StoryViewHolder, position: Int) {
-        holder.bind(oldList[position])
-    }
-
-    override fun getItemCount(): Int = oldList.size
-
-    fun submitList(newList: List<StoryViewParam>) {
-        val diffUtil = StoryDiffUtil(oldList, newList)
-        val diffResult = DiffUtil.calculateDiff(diffUtil)
-        oldList.clear()
-        oldList.addAll(newList)
-        diffResult.dispatchUpdatesTo(this)
+        val data = getItem(position)
+        if (data != null) {
+            holder.bind(data)
+        }
     }
 
     inner class StoryViewHolder(private val binding: ItemStoriesBinding) :
@@ -46,6 +37,24 @@ class StoryAdapter(
                 ivPhoto.loadImage(story.photoUrl)
 
                 itemView.setOnClickListener { onClick(story) }
+            }
+        }
+    }
+
+    companion object {
+        val DIFF_CALLBACK = object : DiffUtil.ItemCallback<StoryViewParam>() {
+            override fun areItemsTheSame(
+                oldItem: StoryViewParam,
+                newItem: StoryViewParam
+            ): Boolean {
+                return oldItem == newItem
+            }
+
+            override fun areContentsTheSame(
+                oldItem: StoryViewParam,
+                newItem: StoryViewParam
+            ): Boolean {
+                return oldItem.id == newItem.id
             }
         }
     }

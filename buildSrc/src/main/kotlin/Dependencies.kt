@@ -34,6 +34,9 @@ object Libraries {
         const val paging = "3.1.1"
         const val room = "2.4.3"
         const val roomPaging = "2.4.3"
+        const val recyclerView = "1.2.1"
+        const val googleMaps = "18.1.0"
+        const val googleLocation = "19.0.1"
     }
 
     const val androidxCoreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
@@ -73,7 +76,12 @@ object Libraries {
     const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
     const val lottie = "com.airbnb.android:lottie:${Versions.lottie}"
     const val paging = "androidx.paging:paging-runtime-ktx:${Versions.paging}"
+    const val pagingCommon = "androidx.paging:paging-common-ktx:${Versions.paging}"
     const val room = "androidx.room:room-ktx:${Versions.room}"
     const val roomCompiler = "androidx.room:room-compiler:${Versions.room}"
     const val roomPaging = "androidx.room:room-paging:${Versions.roomPaging}"
+    const val recyclerView = "androidx.recyclerview:recyclerview:${Versions.recyclerView}"
+    const val googleMaps = "com.google.android.gms:play-services-maps:${Versions.googleMaps}"
+    const val googleLocation =
+        "com.google.android.gms:play-services-location:${Versions.googleLocation}"
 }

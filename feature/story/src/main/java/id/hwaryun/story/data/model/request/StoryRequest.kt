@@ -1,13 +1,12 @@
 package id.hwaryun.story.data.model.request
 
 import com.google.gson.annotations.SerializedName
-import okhttp3.MultipartBody
 
 data class StoryRequest(
     @SerializedName("description")
     val description: String?,
-    @SerializedName("photo")
-    val photo: MultipartBody.Part?,
+//    @SerializedName("photo")
+//    val photo: MultipartBody.Part?,
     @SerializedName("lat")
     val lat: Double?,
     @SerializedName("long")

@@ -1,6 +1,6 @@
 package id.hwaryun.story.domain
 
-import com.catnip.core.base.BaseUseCase
+import id.hwaryun.core.base.BaseUseCase
 import id.hwaryun.core.exception.FieldErrorException
 import id.hwaryun.core.wrapper.ViewResource
 import id.hwaryun.story.R

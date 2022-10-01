@@ -14,4 +14,8 @@
 
     <string name="story_success">Berhasil menambahkan cerita</string>
     <string name="story_failed">Gagal menambahkan cerita</string>
+
+    <string name="retry">Muat ulang</string>
+    <string name="no_location_selected">Tidak ada lokasi yang dipilih</string>
+    <string name="change_location">Ubah</string>
 </resources>

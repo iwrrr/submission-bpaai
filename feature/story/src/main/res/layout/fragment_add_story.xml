@@ -7,7 +7,6 @@
     android:background="@android:color/white"
     tools:context=".presentation.ui.add_story.AddStoryFragment">
 
-
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="0dp"
@@ -68,6 +67,32 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:srcCompat="@drawable/ic_placeholder" />
 
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_location"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/no_location_selected"
+        app:layout_constraintEnd_toStartOf="@+id/tv_add_location"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_photo" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_add_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:padding="8dp"
+        android:text="@string/change_location"
+        android:textColor="@android:color/holo_blue_light"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_location"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_location"
+        app:layout_constraintTop_toTopOf="@+id/tv_location" />
+
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/et_description"
         android:layout_width="0dp"
@@ -81,7 +106,7 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_photo" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_location" />
 
     <ProgressBar
         android:id="@+id/progress_bar"

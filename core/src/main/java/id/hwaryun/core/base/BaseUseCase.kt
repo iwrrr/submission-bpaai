@@ -1,4 +1,4 @@
-package com.catnip.core.base
+package id.hwaryun.core.base
 
 import id.hwaryun.core.wrapper.ViewResource
 import kotlinx.coroutines.CoroutineDispatcher

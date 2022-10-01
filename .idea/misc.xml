@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/dev/android/bootcamp/dicoding/android-intermediate/Storygram/app/src/main/res/layout/activity_main.xml" value="0.16770833333333332" />
         <entry key="..\:/dev/android/bootcamp/dicoding/android-intermediate/Storygram/feature/auth/src/main/res/layout/activity_auth.xml" value="0.34739583333333335" />
         <entry key="..\:/dev/android/bootcamp/dicoding/android-intermediate/Storygram/feature/auth/src/main/res/layout/activity_login.xml" value="0.3614583333333333" />
         <entry key="..\:/dev/android/bootcamp/dicoding/android-intermediate/Storygram/feature/auth/src/main/res/layout/fragment_login.xml" value="0.33" />
@@ -10,14 +11,18 @@
         <entry key="..\:/dev/android/bootcamp/dicoding/android-intermediate/Storygram/feature/login/src/main/res/layout/activity_login.xml" value="0.5" />
         <entry key="..\:/dev/android/bootcamp/dicoding/android-intermediate/Storygram/feature/register/src/main/res/layout/activity_register.xml" value="0.18" />
         <entry key="..\:/dev/android/bootcamp/dicoding/android-intermediate/Storygram/feature/splash/src/main/res/layout/activity_splash.xml" value="0.33" />
+        <entry key="..\:/dev/android/bootcamp/dicoding/android-intermediate/Storygram/feature/story/src/main/res/drawable/bg_circle.xml" value="0.121" />
+        <entry key="..\:/dev/android/bootcamp/dicoding/android-intermediate/Storygram/feature/story/src/main/res/drawable/ic_add_location.xml" value="0.108" />
         <entry key="..\:/dev/android/bootcamp/dicoding/android-intermediate/Storygram/feature/story/src/main/res/drawable/ic_camera.xml" value="0.2025" />
         <entry key="..\:/dev/android/bootcamp/dicoding/android-intermediate/Storygram/feature/story/src/main/res/drawable/ic_image_2.xml" value="0.1" />
+        <entry key="..\:/dev/android/bootcamp/dicoding/android-intermediate/Storygram/feature/story/src/main/res/drawable/ic_map.xml" value="0.108" />
         <entry key="..\:/dev/android/bootcamp/dicoding/android-intermediate/Storygram/feature/story/src/main/res/layout/activity_story.xml" value="0.225" />
         <entry key="..\:/dev/android/bootcamp/dicoding/android-intermediate/Storygram/feature/story/src/main/res/layout/bottom_sheet_image.xml" value="0.33" />
         <entry key="..\:/dev/android/bootcamp/dicoding/android-intermediate/Storygram/feature/story/src/main/res/layout/bottom_sheet_logout.xml" value="0.5" />
         <entry key="..\:/dev/android/bootcamp/dicoding/android-intermediate/Storygram/feature/story/src/main/res/layout/fragment_add_story.xml" value="0.3795180722891566" />
         <entry key="..\:/dev/android/bootcamp/dicoding/android-intermediate/Storygram/feature/story/src/main/res/layout/fragment_detail_story.xml" value="0.3614583333333333" />
         <entry key="..\:/dev/android/bootcamp/dicoding/android-intermediate/Storygram/feature/story/src/main/res/layout/fragment_list_story.xml" value="0.33" />
+        <entry key="..\:/dev/android/bootcamp/dicoding/android-intermediate/Storygram/feature/story/src/main/res/layout/fragment_maps.xml" value="0.25" />
         <entry key="..\:/dev/android/bootcamp/dicoding/android-intermediate/Storygram/feature/story/src/main/res/layout/item_stories.xml" value="0.5" />
         <entry key="..\:/dev/android/bootcamp/dicoding/android-intermediate/Storygram/feature/story/src/main/res/layout/layout_empty.xml" value="0.33" />
         <entry key="..\:/dev/android/bootcamp/dicoding/android-intermediate/Storygram/feature/story/src/main/res/layout/layout_error.xml" value="0.3614583333333333" />

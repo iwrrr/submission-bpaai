@@ -1,0 +1,78 @@
+1. AuthRepositoryImplTest
+
+	a. Ketika login dan semua input valid
+		- Memastikan nilai kembalian tidak null
+		- Memastikan nilai kembalian sesuai dengan yang diharapkan
+
+	b. Ketika register dan semua input valid
+		- Memastikan nilai kembalian tidak null
+		- Memastikan nilai kembalian sesuai dengan yang diharapkan
+
+2. AuthViewModelTest
+
+	a. Ketika login berhasil
+		- Memastikan mengembalikan ViewResource.Success
+		- Memastikan loginUserUseCase terpanggil
+		- Memastikan nilai kembalian tidak null
+		- Memastikan nilai kembalian sesuai dengan yang diharapkan
+
+	b. Ketika register berhasil
+		- Memastikan mengembalikan ViewResource.Success
+		- Memastikan registerUserUseCase terpanggil
+		- Memastikan nilai kembalian tidak null
+		- Memastikan nilai kembalian sesuai dengan yang diharapkan
+
+	c. Ketika login gagal dan user tidak ditemukan
+		- Memastikan mengembalikan ViewResource.Error
+		- Memastikan loginUserUseCase terpanggil
+		- Memastikan nilai kembalian tidak null
+		- Memastikan nilai kembalian sesuai dengan yang diharapkan
+
+	d. Ketika register gagal
+		- Memastikan mengembalikan ViewResource.Error
+		- Memastikan registerUserUseCase terpanggil
+		- Memastikan nilai kembalian tidak null
+		- Memastikan nilai kembalian sesuai dengan yang diharapkan
+
+3. StoryRepositoryImplTest
+
+	a. Ketika berhasil memuat story
+		- Memastikan differ.snapshot() tidak null
+		- Memastikan ukuran data pada snapshot() sesuai
+
+	b. Ketika berhasil memuat story dengan data lokasi
+		- Memastikan nilai kembalian tidak kosong
+		- Memastikan nilai kembalian sesuai dengan yang diharapkan
+
+	c. Ketika berhasil memuat story dengan data lokasi namun data story kosong
+		- Memastikan nilai kembalian berupa list kosong
+		- Memastikan nilai kembalian sesuai dengan yang diharapkan
+
+	d. Ketika gagal memuat story dengan data lokasi
+		- Memastikan mengembalikan DataResource.Error
+		- Memastikan nilai kembalian sesuai dengan yang diharapkan
+
+4. StoryViewModelTest
+
+	a. Ketika getToken berhasil
+		- Memastikan mengembalikan ViewResource.Success
+		- Memastikan nilai kembalian tidak null
+		- Memastikan nilai kembalian sesuai dengan yang diharapkan
+
+	b. Ketika getStoriesWithLocation berhasil
+		- Memastikan mengembalikan ViewResource.Success
+		- Memastikan nilai kembalian tidak null
+		- Memastikan ukuran data sesuai dengan yang diharapkan
+
+
+	c. Ketika getStories berhasil
+		- Memastikan differ.snapshot() tidak null
+		- Memastikan ukuran data pada snapshot() sesuai
+
+
+4. SplashViewModelTest
+
+	a. Ketika getToken berhasil
+		- Memastikan mengembalikan ViewResource.Success
+		- Memastikan nilai kembalian tidak null
+		- Memastikan nilai kembalian sesuai dengan yang diharapkan

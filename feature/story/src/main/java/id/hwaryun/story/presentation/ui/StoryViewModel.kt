@@ -7,9 +7,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import id.hwaryun.core.wrapper.ViewResource
 import id.hwaryun.shared.domain.ClearUserTokenUseCase
 import id.hwaryun.shared.domain.GetUserTokenUseCase
-import id.hwaryun.story.domain.GetStoriesUseCase
-import id.hwaryun.story.domain.PostStoryUseCase
-import id.hwaryun.story.domain.StoryResult
+import id.hwaryun.story.domain.*
 import kotlinx.coroutines.launch
 import java.io.File
 import javax.inject.Inject
@@ -18,6 +16,7 @@ import javax.inject.Inject
 class StoryViewModel @Inject constructor(
     private val getUserTokenUseCase: GetUserTokenUseCase,
     private val clearUserTokenUseCase: ClearUserTokenUseCase,
+    private val getStoriesWithLocationUseCase: GetStoriesWithLocationUseCase,
     private val getStoriesUseCase: GetStoriesUseCase,
     private val postStoryUseCase: PostStoryUseCase
 ) : ViewModel() {
@@ -25,6 +24,7 @@ class StoryViewModel @Inject constructor(
     val tokenResult = MutableLiveData<ViewResource<String>>()
     val logoutResult = MutableLiveData<ViewResource<Unit?>>()
     val storyResult = MutableLiveData<ViewResource<StoryResult>>()
+    val storyLocationResult = MutableLiveData<ViewResource<StoryLocationResult>>()
     val postResult = MutableLiveData<ViewResource<Unit>>()
 
     fun getToken() {
@@ -43,17 +43,32 @@ class StoryViewModel @Inject constructor(
         }
     }
 
+    fun getStoriesWithLocation() {
+        viewModelScope.launch {
+            getStoriesWithLocationUseCase().collect {
+                storyLocationResult.postValue(it)
+            }
+        }
+    }
+
     fun getStories() {
         viewModelScope.launch {
-            getStoriesUseCase().collect {
+            getStoriesUseCase(viewModelScope).collect {
                 storyResult.postValue(it)
             }
         }
     }
 
-    fun postStory(description: String, photo: File) {
+    fun postStory(description: String, photo: File, lat: Double, long: Double) {
         viewModelScope.launch {
-            postStoryUseCase(PostStoryUseCase.Param(description, photo)).collect {
+            postStoryUseCase(
+                PostStoryUseCase.Param(
+                    description,
+                    photo,
+                    lat.toString(),
+                    long.toString()
+                )
+            ).collect {
                 postResult.postValue(it)
             }
         }
